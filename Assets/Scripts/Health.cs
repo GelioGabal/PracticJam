@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public UnityEvent OnDeath = new();
     [SerializeField] AudioClip deathSound;
     [SerializeField] int MaxHP;
+    [SerializeField] float deathTime = 1;
     int currentHP;
     Coroutine coroutine;
     Animator anim;
@@ -26,7 +27,8 @@ public class Health : MonoBehaviour
     {
         anim.SetTrigger("Death");
         SoundPlayer.Play.Invoke(deathSound);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(deathTime);
         OnDeath.Invoke();
     }
+    public void Destroy() => Destroy(gameObject);
 }
