@@ -9,6 +9,23 @@ public class Item : ScriptableObject
 
     public TileBase Tile;
     public Sprite sprite;
+    public ItemType type;
+    public AtionType ation;
+
+
+
+    public enum ItemType
+    {
+        BuldingBlock,
+        Tool
+    }
+
+    public enum AtionType
+    {
+        remove
+    }
+
+
 }
 
 

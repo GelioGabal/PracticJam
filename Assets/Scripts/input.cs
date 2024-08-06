@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class input : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static PlayerInputs inputActions;
+
+    private void Awake()
+    {
+        inputActions = new PlayerInputs();
+        inputActions.Enable();
+    }
+
+
+    private void OnEnable()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnDisable()
     {
         
     }
